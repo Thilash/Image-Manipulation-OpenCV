@@ -9,7 +9,7 @@ using namespace std;
  
 
 int Photo_Combiner_Color(){
-    cout << "Started " << endl;
+    cout << "Started the process" << endl;
       
     Mat image1,image2,image2_resized,image3;
     image1 = imread("img1.jpg",IMREAD_COLOR);
@@ -41,6 +41,7 @@ int Photo_Combiner_GrayScale(){
     
     image1 = imread("img1.jpg", IMREAD_GRAYSCALE);
     if(!image1.data) { printf("Image 1 not found \n"); return -1;}
+ 
     image2 = imread("img2.jpg",IMREAD_GRAYSCALE);
     if(!image2.data) { printf("Image 2 not found \n"); return -1;}
     
@@ -57,7 +58,6 @@ int Photo_Combiner_GrayScale(){
              
     absdiff( image1,  image2,  image3);
     imwrite("output.jpg",image3);
-    
     cout << "Ended. Your new combined file is called: output.jpg" << endl;
     return 0;
     
@@ -75,7 +75,7 @@ int Photo_brightner() {
     int beta = 0;
     
     //brightness and contrast are changed according to equation g(x) = αf(x)+β
-    cout << "Enter the alpha value you want. Recommonended between [1.0-3.0] "; cin >> alpha;
+    cout << "Enter the alpha value you want. Recommended between [1.0-3.0] "; cin >> alpha;
     cout << "Enter beta value. Recommended between [0-100] "; cin >> beta;
     for (int i = 0; i < img.rows; i++) {
         for (int j = 0; j < img.cols; j++) {
@@ -96,8 +96,3 @@ int main( )
     return 0;
     
 }
-
-
-
-
-
