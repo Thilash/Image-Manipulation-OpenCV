@@ -13,10 +13,10 @@ int Photo_Combiner_Color(){
       
     Mat image1,image2,image2_resized,image3;
     image1 = imread("img1.jpg",IMREAD_COLOR);
-    if( !image1.data ) { printf("Image 1 not found \n"); return -1;}
+    if( !image1.data ) { cout << "Image 1 not found " <<endl; return -1;}
     
     image2 = imread("img2.jpg",IMREAD_COLOR);
-    if( !image2.data ) { printf("Image 2 not found \n"); return -1;}
+    if( !image2.data ) {cout << "Image 2 not found " <<endl; return -1;}
     
     int img1_height = image1.size().height;
     int img1_width = image1.size().width;
@@ -40,10 +40,10 @@ int Photo_Combiner_GrayScale(){
     Mat image1, image2, image2_resized, image3;
     
     image1 = imread("img1.jpg", IMREAD_GRAYSCALE);
-    if(!image1.data) { printf("Image 1 not found \n"); return -1;}
+    if(!image1.data) { cout << "Image 1 not found " <<endl; return -1;}
  
     image2 = imread("img2.jpg",IMREAD_GRAYSCALE);
-    if(!image2.data) { printf("Image 2 not found \n"); return -1;}
+    if(!image2.data) {cout << "Image 2 not found " <<endl; return -1;}
     
     int img1_height = image1.size().height;
     int img1_width = image1.size().width;
@@ -68,7 +68,7 @@ int Photo_brightner() {
     cout << "Started brightening photo process" << endl;
     
     Mat img = imread("img.jpg", IMREAD_COLOR);
-    if (!img.data) {printf("Image not found \n");return -1;}
+    if (!img.data) {cout << "Image not found " <<endl; return -1;}
     
     Mat brght_img = Mat::zeros(img.size(), img.type());
     double alpha = 1.0;
